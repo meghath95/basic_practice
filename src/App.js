@@ -1,25 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import { Link } from "react-router-dom";
+
+function Home() {
+  return(
+    <div>
+      <nav>
+        <span><Link to="/practice1">Practice 1</Link></span>
+      </nav>
     </div>
   );
 }
 
-export default App;
+
+export function Practice1() {
+  const a = 5;
+  const b = 6;
+  const c = 3;
+  var result = Combine(a,b,c);
+    
+    return(
+      <div>
+        <p>Result for the Expression {a} * {b} / {c} = {result}</p>
+      </div>
+    );
+  
+}
+
+function Combine(a,b,c) {
+  var output= a * b / c;
+  return(output);
+}
+
+export function App() {
+  return <Home />;
+}
